@@ -98,7 +98,7 @@ cities.getSupportedLocales();      // ['en', 'ar']
   "cities": {
     "SA": {
       "Riyadh": "Riyad",
-      "Jeddah": "Djeddah"
+      "Jeddah": "Jeddah"
     }
   }
 }
