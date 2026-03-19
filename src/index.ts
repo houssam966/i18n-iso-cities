@@ -46,6 +46,10 @@ const reverseCache: Record<string, Map<string, CityLookup>> = {};
 /** locale → flat englishName → translatedName (built lazily, first match wins) */
 const flatCache: Record<string, Map<string, string>> = {};
 
+function normalizeName(name: string): string {
+  return name.trim().toLowerCase();
+}
+
 function invalidateCache(locale: string): void {
   delete reverseCache[locale];
   delete flatCache[locale];
@@ -76,7 +80,7 @@ function ensureFlat(locale: string): Map<string, string> {
     if (countries) {
       for (const cityMap of Object.values(countries)) {
         for (const [name, translation] of Object.entries(cityMap)) {
-          const key = name.toLowerCase();
+          const key = normalizeName(name);
           if (!map.has(key)) {
             map.set(key, translation);
           }
@@ -113,6 +117,7 @@ export function getName(
   cityName: string,
   locale: string,
 ): string | undefined {
+  if (!cityName) return undefined;
   return locales[locale]?.[countryCode.toUpperCase()]?.[cityName];
 }
 
@@ -127,7 +132,7 @@ export function getName(
  */
 export function translate(cityName: string, locale: string): string | undefined {
   if (!cityName) return undefined;
-  return ensureFlat(locale).get(cityName.toLowerCase());
+  return ensureFlat(locale).get(normalizeName(cityName));
 }
 
 /**
@@ -147,17 +152,32 @@ export function getAll(countryCode: string, locale: string): CityEntry[] {
 
 /**
  * Reverse-lookup: given a translated city name, find the original English name
- * and country code.
+ * and country code. If the translated name is ambiguous across countries,
+ * pass a country code to disambiguate.
  *
  * @param translatedName - City name in the target locale (e.g. "الرياض")
  * @param locale         - The locale of the translated name
+ * @param countryCode    - Optional ISO 3166-1 alpha-2 country code hint
  * @returns { countryCode, name } or undefined
  */
 export function getOriginalName(
   translatedName: string,
   locale: string,
+  countryCode?: string,
 ): CityLookup | undefined {
   if (!translatedName) return undefined;
+
+  if (countryCode) {
+    const normalizedCountryCode = countryCode.toUpperCase();
+    const cityMap = locales[locale]?.[normalizedCountryCode] ?? {};
+
+    for (const [name, translation] of Object.entries(cityMap)) {
+      if (translation === translatedName) {
+        return { countryCode: normalizedCountryCode, name };
+      }
+    }
+  }
+
   return ensureReverse(locale).get(translatedName);
 }
 

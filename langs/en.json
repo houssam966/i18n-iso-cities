@@ -4,10 +4,10 @@
     "SA": {
       "Riyadh": "Riyadh",
       "Jeddah": "Jeddah",
-      "Mecca": "Mecca",
-      "Medina": "Medina",
+      "Makkah": "Makkah",
+      "Madinah": "Madinah",
       "Dammam": "Dammam",
-      "Khobar": "Khobar",
+      "Al Khobar": "Al Khobar",
       "Dhahran": "Dhahran",
       "Taif": "Taif",
       "Tabuk": "Tabuk",
@@ -53,7 +53,7 @@
       "Haql": "Haql",
       "Duba": "Duba",
       "Al Wajh": "Al Wajh",
-      "Al Ula": "Al Ula",
+      "AlUla": "AlUla",
       "Khaybar": "Khaybar",
       "Badr": "Badr",
       "Ras Tanura": "Ras Tanura",
@@ -66,7 +66,7 @@
       "Baljurashi": "Baljurashi",
       "Al Mandaq": "Al Mandaq",
       "Al Bukayriyah": "Al Bukayriyah",
-      "KAEC": "KAEC",
+      "King Abdullah Economic City": "King Abdullah Economic City",
       "Al Muzahimiyah": "Al Muzahimiyah",
       "Layla": "Layla",
       "Al Ghat": "Al Ghat",
@@ -74,8 +74,7 @@
       "Thadiq": "Thadiq",
       "Hotat Sudair": "Hotat Sudair",
       "Al Quway'iyah": "Al Quway'iyah",
-      "Dammam Metropolitan Area": "Dammam Metropolitan Area",
-      "Al Khobar": "Al Khobar"
+      "Dammam Metropolitan Area": "Dammam Metropolitan Area"
     },
     "AE": {
       "Dubai": "Dubai",
@@ -125,7 +124,7 @@
       "Riffa": "Riffa",
       "Muharraq": "Muharraq",
       "Hamad Town": "Hamad Town",
-      "A'ali": "A'ali",
+      "Aali": "Aali",
       "Isa Town": "Isa Town",
       "Sitra": "Sitra",
       "Budaiya": "Budaiya",
@@ -208,13 +207,13 @@
     "LB": {
       "Beirut": "Beirut",
       "Tripoli": "Tripoli",
-      "Sidon": "Sidon",
-      "Tyre": "Tyre",
+      "Saida": "Saida",
+      "Sour": "Sour",
       "Jounieh": "Jounieh",
-      "Byblos": "Byblos",
+      "Jbeil": "Jbeil",
       "Baalbek": "Baalbek",
       "Zahle": "Zahle",
-      "Nabatieh": "Nabatieh",
+      "Nabatiyeh": "Nabatiyeh",
       "Batroun": "Batroun"
     },
     "IQ": {
@@ -279,7 +278,7 @@
       "Gabes": "Gabes",
       "Monastir": "Monastir",
       "Hammamet": "Hammamet",
-      "Djerba": "Djerba"
+      "Jerba": "Jerba"
     },
     "DZ": {
       "Algiers": "Algiers",
@@ -379,7 +378,7 @@
       "Cologne": "Cologne",
       "Frankfurt": "Frankfurt",
       "Stuttgart": "Stuttgart",
-      "Dusseldorf": "Dusseldorf",
+      "Duesseldorf": "Duesseldorf",
       "Leipzig": "Leipzig",
       "Dortmund": "Dortmund",
       "Dresden": "Dresden"

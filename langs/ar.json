@@ -4,10 +4,10 @@
     "SA": {
       "Riyadh": "الرياض",
       "Jeddah": "جدة",
-      "Mecca": "مكة المكرمة",
-      "Medina": "المدينة المنورة",
+      "Makkah": "مكة المكرمة",
+      "Madinah": "المدينة المنورة",
       "Dammam": "الدمام",
-      "Khobar": "الخبر",
+      "Al Khobar": "الخبر",
       "Dhahran": "الظهران",
       "Taif": "الطائف",
       "Tabuk": "تبوك",
@@ -53,7 +53,7 @@
       "Haql": "حقل",
       "Duba": "ضباء",
       "Al Wajh": "الوجه",
-      "Al Ula": "العلا",
+      "AlUla": "العلا",
       "Khaybar": "خيبر",
       "Badr": "بدر",
       "Ras Tanura": "رأس تنورة",
@@ -66,7 +66,7 @@
       "Baljurashi": "بلجرشي",
       "Al Mandaq": "المندق",
       "Al Bukayriyah": "البكيرية",
-      "KAEC": "مدينة الملك عبدالله الاقتصادية",
+      "King Abdullah Economic City": "مدينة الملك عبدالله الاقتصادية",
       "Al Muzahimiyah": "المزاحمية",
       "Layla": "ليلى",
       "Al Ghat": "الغاط",
@@ -74,8 +74,7 @@
       "Thadiq": "ثادق",
       "Hotat Sudair": "حوطة سدير",
       "Al Quway'iyah": "القويعية",
-      "Dammam Metropolitan Area": "منطقة الدمام الحضرية",
-      "Al Khobar": "الخبر"
+      "Dammam Metropolitan Area": "منطقة الدمام الحضرية"
     },
     "AE": {
       "Dubai": "دبي",
@@ -125,7 +124,7 @@
       "Riffa": "الرفاع",
       "Muharraq": "المحرق",
       "Hamad Town": "مدينة حمد",
-      "A'ali": "عالي",
+      "Aali": "عالي",
       "Isa Town": "مدينة عيسى",
       "Sitra": "سترة",
       "Budaiya": "البديع",
@@ -208,13 +207,13 @@
     "LB": {
       "Beirut": "بيروت",
       "Tripoli": "طرابلس",
-      "Sidon": "صيدا",
-      "Tyre": "صور",
+      "Saida": "صيدا",
+      "Sour": "صور",
       "Jounieh": "جونية",
-      "Byblos": "جبيل",
+      "Jbeil": "جبيل",
       "Baalbek": "بعلبك",
       "Zahle": "زحلة",
-      "Nabatieh": "النبطية",
+      "Nabatiyeh": "النبطية",
       "Batroun": "البترون"
     },
     "IQ": {
@@ -279,7 +278,7 @@
       "Gabes": "قابس",
       "Monastir": "المنستير",
       "Hammamet": "الحمامات",
-      "Djerba": "جربة"
+      "Jerba": "جربة"
     },
     "DZ": {
       "Algiers": "الجزائر",
@@ -379,7 +378,7 @@
       "Cologne": "كولونيا",
       "Frankfurt": "فرانكفورت",
       "Stuttgart": "شتوتغارت",
-      "Dusseldorf": "دوسلدورف",
+      "Duesseldorf": "دوسلدورف",
       "Leipzig": "لايبزيغ",
       "Dortmund": "دورتموند",
       "Dresden": "دريسدن"

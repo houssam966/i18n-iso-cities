@@ -29,6 +29,7 @@ cities.getName('SA', 'Riyadh', 'ar');   // 'الرياض'
 cities.getName('AE', 'Dubai', 'ar');     // 'دبي'
 cities.getName('EG', 'Cairo', 'ar');     // 'القاهرة'
 cities.getName('US', 'New York', 'ar');  // 'نيويورك'
+cities.getName('SA', 'Makkah', 'ar');    // 'مكة المكرمة'
 ```
 
 ### Translate without country code (convenience)
@@ -38,6 +39,7 @@ Useful when you get city names from APIs (e.g. Instagram demographics) without c
 ```js
 cities.translate('Riyadh', 'ar');  // 'الرياض'
 cities.translate('london', 'ar');  // 'لندن'  (case-insensitive)
+cities.translate('Sour', 'ar');    // 'صور'
 ```
 
 ### Get all cities for a country
@@ -68,6 +70,11 @@ cities.getOriginalName('الرياض', 'ar');
 cities.getCountryCodes('ar');      // ['SA', 'AE', 'KW', 'QA', ...]
 cities.getSupportedLocales();      // ['en', 'ar']
 ```
+
+### Canonical names
+
+The library uses canonical modern English names such as `Makkah`, `Madinah`, `Sour`, `Jbeil`, `Jerba`, and `Duesseldorf`.
+This is a deliberate breaking-change direction: lookups must use the canonical names shipped in `langs/en.json`.
 
 ## Supported Locales
 

@@ -28,7 +28,7 @@ describe('getName', () => {
   it('returns Arabic translation for SA city', () => {
     expect(cities.getName('SA', 'Riyadh', 'ar')).toBe('الرياض');
     expect(cities.getName('SA', 'Jeddah', 'ar')).toBe('جدة');
-    expect(cities.getName('SA', 'Mecca', 'ar')).toBe('مكة المكرمة');
+    expect(cities.getName('SA', 'Makkah', 'ar')).toBe('مكة المكرمة');
   });
 
   it('returns English name for EN locale', () => {
@@ -96,6 +96,17 @@ describe('getAll', () => {
     expect(qaCities.find(c => c.name === 'Doha')?.translation).toBe('الدوحة');
   });
 
+  it('returns canonical modern names', () => {
+    const saCities = cities.getAll('SA', 'ar');
+    const lbCities = cities.getAll('LB', 'ar');
+
+    expect(saCities.find(c => c.name === 'Makkah')?.translation).toBe('مكة المكرمة');
+    expect(saCities.find(c => c.name === 'Madinah')?.translation).toBe('المدينة المنورة');
+    expect(saCities.find(c => c.name === 'Al Khobar')?.translation).toBe('الخبر');
+    expect(lbCities.find(c => c.name === 'Sour')?.translation).toBe('صور');
+    expect(lbCities.find(c => c.name === 'Jbeil')?.translation).toBe('جبيل');
+  });
+
   it('returns sorted results', () => {
     const saCities = cities.getAll('SA', 'ar');
     const names = saCities.map(c => c.name);
@@ -125,6 +136,17 @@ describe('getOriginalName', () => {
 
   it('returns undefined for empty input', () => {
     expect(cities.getOriginalName('', 'ar')).toBeUndefined();
+  });
+
+  it('returns canonical names for modernized entries', () => {
+    expect(cities.getOriginalName('مكة المكرمة', 'ar')).toEqual({
+      countryCode: 'SA',
+      name: 'Makkah',
+    });
+    expect(cities.getOriginalName('صور', 'ar', 'LB')).toEqual({
+      countryCode: 'LB',
+      name: 'Sour',
+    });
   });
 });
 

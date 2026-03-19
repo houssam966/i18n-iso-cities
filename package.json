@@ -1,6 +1,6 @@
 {
   "name": "i18n-iso-cities",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Multilingual city name translations organized by ISO 3166-1 country codes. Like i18n-iso-countries, but for cities. Arabic-first, community-driven.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
