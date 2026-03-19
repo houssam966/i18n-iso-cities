@@ -74,7 +74,8 @@
       "Thadiq": "Thadiq",
       "Hotat Sudair": "Hotat Sudair",
       "Al Quway'iyah": "Al Quway'iyah",
-      "Dammam Metropolitan Area": "Dammam Metropolitan Area"
+      "Dammam Metropolitan Area": "Dammam Metropolitan Area",
+      "Hafar Al Batin": "Hafar Al Batin"
     },
     "AE": {
       "Dubai": "Dubai",
@@ -332,7 +333,9 @@
       "Oxford": "Oxford",
       "Cambridge": "Cambridge",
       "Brighton": "Brighton",
-      "Leicester": "Leicester"
+      "Leicester": "Leicester",
+      "Coventry": "Coventry",
+      "Bradford": "Bradford"
     },
     "US": {
       "New York": "New York",

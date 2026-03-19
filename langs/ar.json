@@ -74,7 +74,8 @@
       "Thadiq": "ثادق",
       "Hotat Sudair": "حوطة سدير",
       "Al Quway'iyah": "القويعية",
-      "Dammam Metropolitan Area": "منطقة الدمام الحضرية"
+      "Dammam Metropolitan Area": "منطقة الدمام الحضرية",
+      "Hafar Al Batin": "حفر الباطن"
     },
     "AE": {
       "Dubai": "دبي",
@@ -332,7 +333,9 @@
       "Oxford": "أكسفورد",
       "Cambridge": "كامبريدج",
       "Brighton": "برايتون",
-      "Leicester": "ليستر"
+      "Leicester": "ليستر",
+      "Coventry": "كوفنتري",
+      "Bradford": "برادفورد"
     },
     "US": {
       "New York": "نيويورك",
