@@ -1,0 +1,57 @@
+{
+  "name": "i18n-iso-cities",
+  "version": "1.0.0",
+  "description": "Multilingual city name translations organized by ISO 3166-1 country codes. Like i18n-iso-countries, but for cities. Arabic-first, community-driven.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./langs/*": "./langs/*"
+  },
+  "files": [
+    "dist",
+    "langs"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "i18n",
+    "cities",
+    "arabic",
+    "translation",
+    "localization",
+    "l10n",
+    "iso",
+    "iso-3166",
+    "countries",
+    "ar",
+    "en",
+    "multilingual",
+    "react-native",
+    "react",
+    "node"
+  ],
+  "author": "houssam966",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houssam966/i18n-iso-cities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/houssam966/i18n-iso-cities/issues"
+  },
+  "homepage": "https://github.com/houssam966/i18n-iso-cities#readme",
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
