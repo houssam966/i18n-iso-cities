@@ -3,10 +3,12 @@ import cities from '../src/index';
 import type { LocaleData } from '../src/index';
 import en from '../langs/en.json';
 import ar from '../langs/ar.json';
+import de from '../langs/de.json';
 
 beforeAll(() => {
   cities.registerLocale(en as LocaleData);
   cities.registerLocale(ar as LocaleData);
+  cities.registerLocale(de as LocaleData);
 });
 
 describe('registerLocale', () => {
@@ -14,6 +16,7 @@ describe('registerLocale', () => {
     const locales = cities.getSupportedLocales();
     expect(locales).toContain('en');
     expect(locales).toContain('ar');
+    expect(locales).toContain('de');
   });
 
   it('ignores invalid data', () => {
@@ -64,6 +67,16 @@ describe('getName', () => {
 
   it('translates EG cities', () => {
     expect(cities.getName('EG', 'Cairo', 'ar')).toBe('القاهرة');
+  });
+
+  it('returns German translation for known exonyms', () => {
+    expect(cities.getName('SA', 'Riyadh', 'de')).toBe('Riad');
+    expect(cities.getName('EG', 'Cairo', 'de')).toBe('Kairo');
+    expect(cities.getName('DE', 'Munich', 'de')).toBe('München');
+  });
+
+  it('returns canonical English name for German cities without a distinct exonym', () => {
+    expect(cities.getName('AE', 'Dubai', 'de')).toBe('Dubai');
   });
 });
 
@@ -168,6 +181,12 @@ describe('data integrity', () => {
     expect(enCodes).toEqual(arCodes);
   });
 
+  it('en and de have the same country codes', () => {
+    const enCodes = cities.getCountryCodes('en').sort();
+    const deCodes = cities.getCountryCodes('de').sort();
+    expect(enCodes).toEqual(deCodes);
+  });
+
   it('en and ar have the same cities per country', () => {
     const countryCodes = cities.getCountryCodes('en');
     for (const code of countryCodes) {
@@ -177,10 +196,30 @@ describe('data integrity', () => {
     }
   });
 
+  it('en and de have the same cities per country', () => {
+    const countryCodes = cities.getCountryCodes('en');
+    for (const code of countryCodes) {
+      const enCityNames = cities.getAll(code, 'en').map(c => c.name).sort();
+      const deCityNames = cities.getAll(code, 'de').map(c => c.name).sort();
+      expect(deCityNames, `Mismatch for ${code}`).toEqual(enCityNames);
+    }
+  });
+
   it('all Arabic translations are non-empty strings', () => {
     const countryCodes = cities.getCountryCodes('ar');
     for (const code of countryCodes) {
       const allCities = cities.getAll(code, 'ar');
+      for (const city of allCities) {
+        expect(city.translation, `Empty translation for ${code}/${city.name}`).toBeTruthy();
+        expect(typeof city.translation).toBe('string');
+      }
+    }
+  });
+
+  it('all German translations are non-empty strings', () => {
+    const countryCodes = cities.getCountryCodes('de');
+    for (const code of countryCodes) {
+      const allCities = cities.getAll(code, 'de');
       for (const city of allCities) {
         expect(city.translation, `Empty translation for ${code}/${city.name}`).toBeTruthy();
         expect(typeof city.translation).toBe('string');

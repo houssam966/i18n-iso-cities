@@ -17,9 +17,11 @@ import cities from 'i18n-iso-cities';
 // Import only the locales you need (tree-shakeable)
 import en from 'i18n-iso-cities/langs/en.json';
 import ar from 'i18n-iso-cities/langs/ar.json';
+import de from 'i18n-iso-cities/langs/de.json';
 
 cities.registerLocale(en);
 cities.registerLocale(ar);
+cities.registerLocale(de);
 ```
 
 ### Translate a city name (with country code)
@@ -68,7 +70,7 @@ cities.getOriginalName('الرياض', 'ar');
 
 ```js
 cities.getCountryCodes('ar');      // ['SA', 'AE', 'KW', 'QA', ...]
-cities.getSupportedLocales();      // ['en', 'ar']
+cities.getSupportedLocales();      // ['en', 'ar', 'de']
 ```
 
 ### Canonical names
@@ -82,6 +84,7 @@ This is a deliberate breaking-change direction: lookups must use the canonical n
 |--------|----------|
 | `en`   | English  |
 | `ar`   | Arabic   |
+| `de`   | German   |
 
 ## Covered Countries
 
@@ -116,7 +119,7 @@ This is a deliberate breaking-change direction: lookups must use the canonical n
 
 ### Adding cities
 
-1. Add the city to **all** locale files (`en.json`, `ar.json`, etc.).
+1. Add the city to **all** locale files (`en.json`, `ar.json`, `de.json`, etc.).
 2. Keep cities alphabetically sorted within each country.
 3. Run `npm test` to verify data integrity.
 
